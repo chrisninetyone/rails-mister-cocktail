@@ -1,7 +1,6 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
   <p>Mmm</p>
-
   <%= simple_form_for [@cocktail, @dose] do |f|%>
     <%= f.input :description %>
     <%= f.association :ingredient  %>
@@ -11,7 +10,9 @@
   <% @cocktail.doses.each do |dose| %>
     <%= dose.description %>
     <%= dose.ingredient.name %>
+    <%= link_to "Delete this Dose", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
+
 
   <%= link_to "Back to List", cocktails_path %>
 
