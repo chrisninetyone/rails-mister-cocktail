@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
-  <p>Mmm</p>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
   <%= simple_form_for [@cocktail, @dose] do |f|%>
     <%= f.input :description %>
     <%= f.association :ingredient  %>

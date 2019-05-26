@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 *{padding: 0; margin: 0; box-sizing: border-box;}
-body{height: 900px;}
+body{
+  height: 900px;
+  background-color: #eae8e8
+  }
 header {
   background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
   text-align: center;
@@ -13,6 +16,7 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 85% 85% / 30%;
+  margin-bottom: 30px;
 }
 header .overlay{
   width: 100%;
@@ -20,7 +24,7 @@ header .overlay{
   padding: 50px;
   color: #FFF;
   text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 75%);
 
 }
 
@@ -29,7 +33,16 @@ h1 {
   font-size: 80px;
   margin-bottom: 30px;
 }
-
+.cocktail-name {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fab79d;
+  }
+}
 
 .button {
   border: none;
@@ -46,35 +59,89 @@ h1 {
   background-color: #fdf5ff;
 }
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// .card-product {
+//   overflow: hidden;
+//   height: 120px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+// }
+
+// .card-product img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
+
+// .card-product h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-product p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+// }
+
+// .card-product .card-product-infos {
+//   padding: 16px;
+// }
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
-  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
